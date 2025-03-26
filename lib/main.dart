@@ -1,14 +1,9 @@
 import 'package:flutter/material.dart';
 import 'pages/SpecialOfferScreen.dart';
+import 'pages/ProductPage.dart';
 
 void main() {
-  runApp(MaterialApp(
-    initialRoute: '/',
-    routes: {
-      '/' : (context) => MyHomePage(title: 'title'),
-      '/offers' : (context) => Specialofferscreen(),
-    },
-  ));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -23,7 +18,11 @@ class MyApp extends StatelessWidget {
 
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'Home Page'),
+      routes: {
+        '/': (context) => const MyHomePage(title: 'Home Page'),
+        '/offers': (context) => const Specialofferscreen(),
+        '/product': (context) => const ProductPage(),
+      },
     );
   }
 }
@@ -38,13 +37,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
+  
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
             ),
             ElevatedButton(onPressed:() {
-              Navigator.pushNamed(context, 'offers');
+              Navigator.pushNamed(context, '/offers');
             },
                 style: ElevatedButton.styleFrom (
                   backgroundColor: Colors.amber
@@ -89,11 +82,6 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:lesson6/ProductCard.dart';
 
@@ -25,22 +23,22 @@ class _SpecialofferscreenState extends State<Specialofferscreen> {
           mainAxisSpacing: 10,
           crossAxisCount: 2,
           children: <Widget>[
-            ProductCard(
-              'https://www.google.com/imgres?q=shoes&imgurl=https%3A%2F%2Ffuelshoes.com%2Fcdn%2Fshop%2Ffiles%2F8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg%3Fv%3D1720001401%26width%3D3000&imgrefurl=https%3A%2F%2Ffuelshoes.com%2Fproducts%2Ffuel-freedom-sports-shoes-for-boys&docid=zneZ4t_Iu3EyLM&tbnid=XHN7pcNFSuuveM&vet=12ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA..i&w=3000&h=3000&hcb=2&ved=2ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA', 
+            productCard(context,
+              'https://fuelshoes.com/cdn/shop/files/8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg?v=1720001401&width=1000',
               'First product', 
-              138.99 as Double),
-              ProductCard(
-              'https://www.google.com/imgres?q=shoes&imgurl=https%3A%2F%2Ffuelshoes.com%2Fcdn%2Fshop%2Ffiles%2F8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg%3Fv%3D1720001401%26width%3D3000&imgrefurl=https%3A%2F%2Ffuelshoes.com%2Fproducts%2Ffuel-freedom-sports-shoes-for-boys&docid=zneZ4t_Iu3EyLM&tbnid=XHN7pcNFSuuveM&vet=12ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA..i&w=3000&h=3000&hcb=2&ved=2ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA', 
+              138.99),
+              productCard(context,
+              'https://fuelshoes.com/cdn/shop/files/8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg?v=1720001401&width=1000',
               'Second product', 
-              120.99 as Double),
-              ProductCard(
-              'https://www.google.com/imgres?q=shoes&imgurl=https%3A%2F%2Ffuelshoes.com%2Fcdn%2Fshop%2Ffiles%2F8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg%3Fv%3D1720001401%26width%3D3000&imgrefurl=https%3A%2F%2Ffuelshoes.com%2Fproducts%2Ffuel-freedom-sports-shoes-for-boys&docid=zneZ4t_Iu3EyLM&tbnid=XHN7pcNFSuuveM&vet=12ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA..i&w=3000&h=3000&hcb=2&ved=2ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA', 
+              120.99),
+              productCard(context,
+              'https://fuelshoes.com/cdn/shop/files/8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg?v=1720001401&width=1000',
               'Third product', 
-              138.00 as Double),
-              ProductCard(
-              'https://www.google.com/imgres?q=shoes&imgurl=https%3A%2F%2Ffuelshoes.com%2Fcdn%2Fshop%2Ffiles%2F8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg%3Fv%3D1720001401%26width%3D3000&imgrefurl=https%3A%2F%2Ffuelshoes.com%2Fproducts%2Ffuel-freedom-sports-shoes-for-boys&docid=zneZ4t_Iu3EyLM&tbnid=XHN7pcNFSuuveM&vet=12ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA..i&w=3000&h=3000&hcb=2&ved=2ahUKEwjP34OozaKMAxXnQ_EDHThzGHAQM3oECGYQAA', 
+              138.00),
+              productCard(context,
+              'https://fuelshoes.com/cdn/shop/files/8_1e1df76b-b544-44fc-8c2f-e31dba4b1eb3.jpg?v=1720001401&width=1000',
               'Fourth product', 
-              138.99 as Double)
+              138.99)
           ],
           ),
     );

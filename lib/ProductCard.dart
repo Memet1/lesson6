@@ -1,16 +1,15 @@
-import 'dart:ffi';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
-Widget ProductCard(String imageURL, String name, Double price) {
+Widget productCard(BuildContext context, String imageURL, String name, double price) {
   return Container(
     padding: EdgeInsets.all(10),
     decoration: BoxDecoration(color: Color.fromRGBO(243, 243, 243, 1)),
     child: Column(
       children: <Widget>[
-        Image.network(
-          imageURL,
-        ),
+        Flexible(child: Image.network(
+          imageURL.toString(),
+        )),
         Text(
           name,
           style: GoogleFonts.inter(
@@ -33,24 +32,41 @@ Widget ProductCard(String imageURL, String name, Double price) {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xFFD9D9D9),
-                ),
-                child: Text(
-                  'MORE INFO',
-                  style: GoogleFonts.inter(
-                    fontSize: 16,
-                    fontWeight: FontWeight.normal,
-                    color: Colors.black,
-                  ),
-                ),
-              ),
-              ElevatedButton(
+               Flexible(child:ElevatedButton(
+                 onPressed: () {
+                  Navigator.pushNamed(
+                    context,
+                    '/product',
+                    arguments: {
+                      'imageURL': imageURL,
+                      'name' : name,
+                      'price' : price,
+                    });
+                 },
+                 style: ElevatedButton.styleFrom(
+                   backgroundColor: Color(0xFFD9D9D9),
+                   minimumSize: Size(double.infinity, 50),
+                   shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.circular(0)
+                   )
+                 ),
+                 child: Text(
+                   'MORE INFO',
+                   style: GoogleFonts.inter(
+                     fontSize: 16,
+                     fontWeight: FontWeight.normal,
+                     color: Colors.black,
+                   ),
+                 ),
+               ) ),
+              Flexible(child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xFF2F7BB2),
+                  minimumSize: Size(double.infinity, 50),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(0),
+                  )
                 ),
                 child: Text(
                   'BUY NOW',
@@ -60,7 +76,7 @@ Widget ProductCard(String imageURL, String name, Double price) {
                     color: Colors.white,
                   ),
                 ),
-              ),
+              )),
             ],
           ),
         ),
